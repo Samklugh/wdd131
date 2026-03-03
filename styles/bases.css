@@ -1,0 +1,161 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    /* background-color: peachpuff; */
+}
+
+
+
+
+
+/* ---------------------------------------------------------------------*/
+                            /* Header Section  */
+/* ---------------------------------------------------------------------*/
+
+
+header span {
+    background-color: #333333;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+    font-size: 2rem;
+    display: block;
+}
+
+
+nav {
+    background-color: #555555;
+    padding: 10px;
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    color: #000000;
+    padding: 1rem 0;
+}
+
+nav:hover {
+    background-color: #494040;
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.2rem;
+}
+
+nav a:hover {
+    color: #ffcc00;
+    text-decoration: overline;
+}
+
+/* ---------------------------------------------------------------------*/
+/*                          Main Section  */
+/* ---------------------------------------------------------------------*/
+
+
+main {
+    display: flex;
+    width: 80%;
+    margin: 20px auto;
+}
+
+main .fullname{
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5rem;
+    padding: 1rem;
+    border: 1px solid #333333;
+    display: inline;
+    width: 100%;
+}
+
+.card {
+    background-color: #f0f0f0;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.card:first-child {
+    width: 70%;
+    margin-right: 1rem;
+}
+
+.card:last-child {
+    width: 30%;
+}
+
+ul{
+    margin-top: 4rem;
+
+}
+
+li {
+    list-style: inside;
+    margin: 10px 0;
+    font-size: 1rem;
+    text-align: left;
+}
+
+.first-card h1:first-child {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    background-color: #ffcc00;
+}
+
+.second-card h1:first-child {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    background-color: #ffcc00;
+}
+
+.profile{
+    display: flex;
+    margin-top: 20px;
+}
+
+.country{
+    display: flex;
+    margin-top: 20px;
+}
+img {
+    width: 10rem;
+    height: auto;
+    margin-bottom: 20px;
+}
+
+.main-content {
+    display: flex;
+    margin-top: 7rem;
+}
+
+
+.naija{
+    text-decoration: underline;
+    font-weight: 700;
+    font-size: 1rem;
+    margin: 1rem 0 2rem 0;
+}
+
+
+
+
+
+/* ---------------------------------------------------------------------*/
+/*                          Footer Section  */
+/* ---------------------------------------------------------------------*/
+
+footer p {
+    background-color: #333333;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+    font-size: 1.5rem;
+}

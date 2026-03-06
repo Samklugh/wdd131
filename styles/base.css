@@ -20,6 +20,11 @@ body {
 /* ---------------------------------------------------------------------*/
 
 
+header {
+    background-color: #333333;
+    width: 100%;
+}
+
 header span {
     background-color: #333333;
     color: #fff;
@@ -155,8 +160,13 @@ img {
 /*                          Footer Section  */
 /* ---------------------------------------------------------------------*/
 
-footer p {
+footer {
     background-color: #333333;
+    width: 100%;
+}
+
+footer p {
+    /* background-color: #333333; */
     color: #fff;
     padding: 20px;
     text-align: center;

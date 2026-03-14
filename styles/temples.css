@@ -1,0 +1,126 @@
+/* temples.css - Mobile-first base styles */
+
+/* Reset */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  line-height: 1.6;
+}
+
+/* Header */
+header {
+  background-color: #14719c;
+  color: white;
+  padding: 1rem 2rem;
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+header p {
+  font-family: 'Roboto', sans-serif;
+  font-size: 2rem;
+  font-weight: 700;
+  margin-right: auto;
+}
+
+#hamburgerBtn {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 1.5rem;
+  cursor: pointer;
+  padding: 0.5rem;
+  display: block; /* Show on mobile */
+}
+
+/* Navigation - hidden by default on mobile */
+#navigation {
+  display: none; /* Hidden on mobile */
+  flex-direction: column;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background-color: #14719c;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+#navigation a {
+  display: block;
+  padding: 1rem 2rem;
+  color: white;
+  text-decoration: none;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 500;
+  border-bottom: 1px solid rgba(255,255,255,0.2);
+  transition: background-color 0.3s;
+}
+
+#navigation a:hover,
+#navigation a:focus {
+  background-color: #bcc71f;
+  color: #14719c;
+}
+
+/* Main */
+main {
+  max-width: 1200px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+
+/* h1 heading */
+main h1.heading {
+  grid-column: 1/-1;
+  text-align: center;
+  margin: 2rem 0 3rem;
+  font-family: 'Roboto', sans-serif;
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #333;
+}
+
+/* Grid - 1 column mobile */
+main {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+}
+
+figure {
+  text-align: center;
+}
+
+figure img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+figcaption {
+  margin-top: 0.5rem;
+  font-weight: 500;
+  color: #555;
+}
+
+/* Footer */
+footer {
+  background-color: #14719c;
+  color: white;
+  text-align: center;
+  padding: 2rem;
+  margin-top: 3rem;
+}
+
+footer p {
+  margin-bottom: 0.5rem;
+  font-family: 'Roboto Mono', monospace;
+}

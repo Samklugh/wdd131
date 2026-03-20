@@ -3,7 +3,7 @@
 /* Large screens: show nav, hide hamburger, 3-column grid */
 @media screen and (min-width: 600px) {
   #hamburgerBtn {
-    display: none;
+  display: none;
   }
 
   #navigation {
@@ -32,6 +32,11 @@
     grid-template-columns: repeat(3, 1fr);
     gap: 2rem;
     padding: 0 2rem;
+  }
+
+  navigation {
+    display: flex;
+    justify-content: space-between
   }
 
   main h1.heading {

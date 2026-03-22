@@ -19,7 +19,7 @@ body {
   margin: 0;
   font-family: var(--body-font);
   color: var(--color-dark);
-  background: linear-gradient(180deg, #f5efe6 0%, #fff 60%);
+  background: linear-gradient(180deg, #f5efe6 0%, #ffffff 60%);
 }
 
 img {

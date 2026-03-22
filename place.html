@@ -1,0 +1,96 @@
+﻿<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Country page for WDD 131" />
+    <meta name="author" content="Samson Odunaiya" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Source+Sans+3:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles/place.css" />
+    <script src="scripts/place.js" defer></script>
+
+    <title>Nigeria | Country Page</title>
+  </head>
+  <body>
+    <header class="site-header">
+      <h1>Nigeria</h1>
+    </header>
+
+    <main>
+      <section class="hero" aria-label="Scenic view of Nigeria">
+        <picture>
+          <source srcset="images/naija-ibo-large.webp" media="(min-width: 1000px)" />
+          <source srcset="images/naija-ibo-medium.webp" media="(min-width: 600px)" />
+          <img
+            src="images/naija-ibo-small.webp"
+            alt="Nigerians in traditional attire"
+            width="1500"
+            height="1000"
+            loading="lazy"
+          />
+        </picture>
+      </section>
+
+      <section class="content">
+        <div class="card data">
+          <h2>Data</h2>
+          <dl>
+            <div>
+              <dt>Capital</dt>
+              <dd>Abuja</dd>
+            </div>
+            <div>
+              <dt>Population</dt>
+              <dd>223,804,632</dd>
+            </div>
+            <div>
+              <dt>Area</dt>
+              <dd>923,768 sq km</dd>
+            </div>
+            <div>
+              <dt>Languages</dt>
+              <dd>English, Hausa, Yoruba, Igbo</dd>
+            </div>
+            <div>
+              <dt>Currency</dt>
+              <dd>Nigerian Naira (NGN)</dd>
+            </div>
+            <div>
+              <dt>Time Zone</dt>
+              <dd>UTC+1</dd>
+            </div>
+          </dl>
+        </div>
+
+        <div class="card weather">
+          <h2 class="weather-title">Weather</h2>
+          <div class="weather-main">
+            <img
+              class="weather-icon"
+              src="images/weather.svg"
+              alt="Partly cloudy"
+              width="64"
+              height="64"
+            />
+            <div class="weather-details">
+              <p><span class="label">Temperature:</span> <span id="temp">32</span>°C</p>
+              <p><span class="label">Conditions:</span> Mostly Cloudy</p>
+              <p><span class="label">Wind:</span> <span id="wind">14</span> km/h</p>
+              <p><span class="label">Wind Chill:</span> <span id="windchill">N/A</span></p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p>©<span id="year"></span> Samson Odunaiya | Nigeria</p>
+      <p>Last Modification: <span id="last-modified"></span></p>
+    </footer>
+  </body>
+</html>

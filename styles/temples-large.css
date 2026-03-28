@@ -29,7 +29,7 @@
 
   /* 3-column grid */
   main {
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(3, 1fr); 
     gap: 2rem;
     padding: 0 2rem;
   }

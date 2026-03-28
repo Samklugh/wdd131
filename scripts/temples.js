@@ -24,6 +24,14 @@ if (hamburgerBtn && navigation) {
     // Toggle navigation visibility
     const isHidden = navigation.style.display === 'none';
     navigation.style.display = isHidden ? 'flex' : 'none';
+
+    // alternatively, you could write instead of using the ternary operator:
+
+    // if (isHidden) {
+      //   navigation.style.display = 'flex';
+      // } else {
+      //   navigation.style.display = 'none';
+      // }
     // this will show the menu if it's hidden, and hide it if it's shown 
     
     // Change hamburger icon to X when open, ☰ when closed

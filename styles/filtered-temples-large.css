@@ -1,0 +1,48 @@
+/* temples-large.css - Large screen overrides */
+
+/* Large screens: show nav, hide hamburger, 3-column grid */
+@media screen and (min-width: 600px) {
+  #hamburgerBtn {
+    display: none;
+  }
+
+  #navigation {
+    display: flex !important; /* Override mobile hide */
+    position: static;
+    flex-direction: row;
+    box-shadow: none;
+    background: transparent;
+  }
+
+  #navigation a {
+    padding: 0.5rem 1rem;
+    border-bottom: none;
+    margin-left: 1rem;
+    border-radius: 4px;
+  }
+
+  #navigation a:hover,
+  #navigation a:focus,
+  #navigation a.active {
+    background-color: rgba(188, 199, 31, 0.2);
+    color: white;
+  }
+
+  .temple-cards {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    padding: 0 2rem;
+  }
+
+  main h1.heading {
+    font-size: 3.5rem;
+  }
+
+  .temple-card img {
+    height: 300px;
+  }
+
+  header p {
+    font-size: 2.5rem;
+  }
+}

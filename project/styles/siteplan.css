@@ -1,0 +1,150 @@
+﻿@import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700&family=Poppins:wght@400;600;700&display=swap');
+
+:root {
+  --primary: #0d4b4c;
+  --accent: #f2c57c;
+  --neutral: #1f2a30;
+  --bg: #f7f3ec;
+  --card: #fff8ee;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Merriweather", serif;
+  color: var(--neutral);
+  background: var(--bg);
+  line-height: 1.6;
+}
+
+.site-header {
+  background: var(--primary);
+  color: white;
+  padding: 2rem 1.5rem;
+  text-align: center;
+}
+
+.logo {
+  font-family: "Poppins", sans-serif;
+  font-size: 2.2rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.logo span {
+  color: var(--accent);
+}
+
+.subtitle {
+  margin-top: 0.5rem;
+  font-size: 1rem;
+  opacity: 0.9;
+}
+
+main {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem 3rem;
+}
+
+.card {
+  background: var(--card);
+  border: 1px solid rgba(31, 42, 48, 0.15);
+  border-radius: 12px;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 6px 14px rgba(13, 75, 76, 0.08);
+}
+
+h1,
+h2,
+h3 {
+  font-family: "Poppins", sans-serif;
+  color: var(--primary);
+  margin-top: 0;
+}
+
+ul {
+  padding-left: 1.25rem;
+  margin: 0.5rem 0 0;
+}
+
+.color-grid {
+  display: grid;
+  gap: 1rem;
+}
+
+.color-swatch {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.swatch {
+  width: 60px;
+  height: 60px;
+  border-radius: 8px;
+  border: 2px solid rgba(31, 42, 48, 0.2);
+}
+
+.swatch-primary {
+  background: var(--primary);
+}
+
+.swatch-accent {
+  background: var(--accent);
+}
+
+.swatch-neutral {
+  background: var(--neutral);
+}
+
+.wireframes {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.wireframe .frame {
+  border: 2px dashed var(--primary);
+  border-radius: 12px;
+  padding: 1rem;
+  background: #fff;
+}
+
+.block {
+  border: 1px solid rgba(31, 42, 48, 0.25);
+  padding: 0.75rem;
+  margin-bottom: 0.75rem;
+  background: rgba(242, 197, 124, 0.25);
+  font-family: "Poppins", sans-serif;
+  font-size: 0.9rem;
+}
+
+.block:last-child {
+  margin-bottom: 0;
+}
+
+.block.wide {
+  padding: 1rem;
+}
+
+.site-footer {
+  text-align: center;
+  padding: 1.5rem;
+  background: var(--primary);
+  color: white;
+  font-size: 0.9rem;
+}
+
+@media (min-width: 700px) {
+  .color-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .wireframes {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}

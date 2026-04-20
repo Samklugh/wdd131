@@ -1,0 +1,148 @@
+/* ======================
+   NAVIGATION
+   Fixed top nav · Logo · Desktop links · Cart badge · Mobile hamburger
+   ====================== */
+
+.nav {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  height: var(--nav-height);
+  background-color: var(--color-background);
+  border-bottom: 1px solid rgba(0,0,0,0.07);
+  z-index: 1000;
+  transition: box-shadow 0.4s ease;
+}
+.nav.scrolled { box-shadow: 0 1px 0 rgba(0,0,0,0.06), 0 4px 20px rgba(0,0,0,0.07); }
+
+.nav__inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 var(--spacing-lg);
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* ── Logo ── */
+.nav__logo {
+  font-family: var(--font-heading);
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--color-primary);
+  letter-spacing: -0.05em;
+  text-transform: uppercase;
+}
+.nav__logo span { color: var(--color-accent); }
+
+/* ── Desktop Links ── */
+.nav__links {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-xl);
+}
+
+.nav__link {
+  font-family: var(--font-heading);
+  font-size: 0.72rem;
+  font-weight: 400;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--color-neutral);
+  position: relative;
+  padding-bottom: 3px;
+}
+.nav__link::after {
+  content: '';
+  position: absolute;
+  bottom: 0; left: 0;
+  width: 0; height: 1px;
+  background-color: var(--color-primary);
+  transition: width 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.nav__link:hover::after,
+.nav__link.active::after  { width: 100%; }
+.nav__link:hover { color: var(--color-primary); }
+.nav__link.active { color: var(--color-primary); font-weight: 500; }
+
+/* ── Cart icon ── */
+.nav__actions { display: flex; align-items: center; gap: var(--spacing-lg); }
+
+.nav__cart {
+  display: flex; align-items: center; gap: 6px;
+  font-family: var(--font-heading);
+  font-size: 0.72rem; font-weight: 400; letter-spacing: 0.12em;
+  text-transform: uppercase; color: var(--color-neutral);
+  transition: color 0.3s ease;
+}
+.nav__cart:hover { color: var(--color-primary); }
+
+.nav__cart-icon { font-size: 1.05rem; }
+
+.nav__cart-count {
+  display: flex; align-items: center; justify-content: center;
+  min-width: 18px; height: 18px; padding: 0 3px;
+  background-color: var(--color-accent); color: var(--color-neutral);
+  font-family: var(--font-heading); font-size: 0.62rem; font-weight: 700;
+  border-radius: 50%; line-height: 1;
+}
+.nav__cart-count.hidden { display: none; }
+
+/* ── Hamburger ── */
+.nav__hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  padding: 4px;
+  background: none; border: none; cursor: pointer;
+}
+.nav__hamburger span {
+  display: block; width: 24px; height: 1.5px;
+  background-color: var(--color-neutral);
+  transition: var(--transition);
+  transform-origin: center;
+}
+.nav__hamburger.open span:nth-child(1) { transform: translateY(6.5px) rotate(45deg); }
+.nav__hamburger.open span:nth-child(2) { opacity: 0; transform: scaleX(0); }
+.nav__hamburger.open span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
+
+/* ── Mobile overlay nav ── */
+.nav__mobile {
+  display: none;
+  position: fixed;
+  top: var(--nav-height); left: 0; right: 0; bottom: 0;
+  background-color: var(--color-background);
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-xl);
+  z-index: 999;
+}
+.nav__mobile.open { display: flex; }
+
+.nav__mobile .nav__link  { font-size: 1.2rem; letter-spacing: 0.15em; }
+.nav__mobile .nav__cart  { font-size: 1rem; }
+
+/* ── Responsive ── */
+/* Tablet + Mobile: swap to hamburger menu at 900 px */
+@media (max-width: 900px) {
+  .nav__links      { display: none; }
+  .nav__hamburger  { display: flex; }
+}
+
+/* Mobile: tighter nav bar */
+@media (max-width: 600px) {
+  .nav__inner { padding: 0 var(--spacing-md); }
+  .nav__logo  { font-size: 1.2rem; }
+
+  /* Keep cart icon + badge; hide the "Cart" text label */
+  .nav__cart > span:not(.nav__cart-icon):not(.nav__cart-count) { display: none; }
+}
+
+/* ── Reduced motion: disable hamburger animation ── */
+@media (prefers-reduced-motion: reduce) {
+  .nav__hamburger span { transition: none; }
+  .nav,
+  .nav__link::after,
+  .nav__cart  { transition: none; }
+}

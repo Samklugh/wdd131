@@ -1,0 +1,22 @@
+Excited to share my latest project — Mercy Couture, a fully responsive fashion e-commerce website I built from scratch!
+
+Mercy is a modern, minimal fashion storefront featuring a hero slideshow, animated product carousels, a "Nine to Know" accordion showcase, category grids, a newsletter section, and a fully functional cart, all styled with clean, handcrafted CSS and powered by vanilla JavaScript.
+
+Here's the exciting part: this entire project was vibe coded. 
+
+This was my first time embracing vibe coding, and honestly? It was a game-changer. For those unfamiliar, vibe coding is the practice of collaborating with AI tools to build projects faster, think through architecture, and move with creative momentum, without losing your own voice as a developer.
+
+And I want to be clear: vibe coding is NOT a threat to developers. It's a tool, just like Stack Overflow, documentation, or any framework we lean on. The logic, the decisions, the debugging, the vision; that still comes from YOU. AI just helps you move faster and build bigger. Developers who embrace it will have a serious edge. 
+
+I'm proud of what I built, and I'm hungry to keep going.
+
+On another note, I'm almost done with my Level 3 Cybersecurity course at Newham College, and I'm actively looking for an apprenticeship opportunity to continue with my Level 4 in either:
+
+🔐 Cybersecurity
+💻 Frontend Development
+
+If you or someone you know is hiring apprentices or offering placement opportunities in either of these fields, I'd love to connect! I'm passionate, driven, and ready to contribute from day one.
+
+Let's connect — drop a comment or send me a message! 
+
+#VibeCoding #WebDevelopment #FrontendDevelopment #Cybersecurity #Apprenticeship #OpenToWork #NewhamCollege #HTML #CSS #JavaScript #EcommerceDesign #LevelUp

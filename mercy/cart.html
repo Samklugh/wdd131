@@ -1,0 +1,378 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Your shopping cart at Mercy." />
+    <meta name="author" content="Mercy Adebiyi" />
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Cart – Mercy" />
+    <meta
+      property="og:description"
+      content="Review and checkout your selected items at Mercy."
+    />
+    <meta property="og:url" content="cart.html" />
+    <title>Cart – Mercy</title>
+
+    <link rel="stylesheet" href="styles/global.css" />
+    <link rel="stylesheet" href="styles/nav.css" />
+    <link rel="stylesheet" href="styles/footer.css" />
+    <link rel="stylesheet" href="styles/cart.css" />
+  </head>
+  <body>
+    <!-- Skip navigation for keyboard users -->
+    <a href="#main-content" class="skip-link">Skip to content</a>
+
+    <!-- ===== NAVIGATION ===== -->
+    <nav class="nav" role="navigation" aria-label="Main navigation">
+      <div class="nav__inner">
+        <a
+          href="index.html"
+          class="nav__logo"
+          aria-label="Mercy homepage"
+        >
+          Mercy
+          <span
+            style="
+              font-size: 0.65rem;
+              font-weight: 300;
+              letter-spacing: 0.15em;
+              display: block;
+              line-height: 1;
+              color: #6b6b6b;
+              text-transform: uppercase;
+            "
+            >Couture</span
+          >
+        </a>
+
+        <ul class="nav__links" role="list">
+          <li><a href="index.html" class="nav__link">Home</a></li>
+          <li><a href="products.html" class="nav__link">Shop</a></li>
+          <li><a href="about.html" class="nav__link">About</a></li>
+          <li><a href="contact.html" class="nav__link">Contact</a></li>
+        </ul>
+
+        <div class="nav__actions">
+          <a href="cart.html" class="nav__cart" aria-label="Shopping cart">
+            <span class="nav__cart-icon" aria-hidden="true">&#128717;</span>
+            <span>Cart</span>
+            <span class="nav__cart-count hidden" aria-live="polite">0</span>
+          </a>
+          <button
+            class="nav__hamburger"
+            aria-label="Toggle menu"
+            aria-expanded="false"
+          >
+            <span></span><span></span><span></span>
+          </button>
+        </div>
+      </div>
+    </nav>
+
+    <div
+      class="nav__mobile"
+      role="dialog"
+      aria-modal="true"
+      aria-label="Mobile navigation"
+    >
+      <ul role="list">
+        <li><a href="index.html" class="nav__link">Home</a></li>
+        <li><a href="products.html" class="nav__link">Shop</a></li>
+        <li><a href="about.html" class="nav__link">About</a></li>
+        <li><a href="contact.html" class="nav__link">Contact</a></li>
+      </ul>
+      <a href="cart.html" class="nav__cart">
+        <span class="nav__cart-icon" aria-hidden="true">&#128717;</span>
+        <span>Cart</span>
+        <span class="nav__cart-count hidden">0</span>
+      </a>
+    </div>
+
+    <!-- ===== MAIN ===== -->
+    <main id="main-content">
+      <!-- Page header -->
+      <header class="page-header">
+        <div class="container">
+          <nav class="breadcrumb" aria-label="Breadcrumb">
+            <a href="index.html">Home</a>
+            <span>&#8250;</span>
+            <span>Cart</span>
+          </nav>
+          <h1>Your Cart</h1>
+          <p id="cart-item-count">Review and update your selection</p>
+        </div>
+      </header>
+
+      <div class="container" id="cart-page-body">
+        <div class="cart-layout">
+          <!-- ════════════════════════════
+             LEFT: ITEMS LIST
+        ════════════════════════════ -->
+          <section aria-label="Cart items">
+            <!-- Free-shipping progress bar -->
+            <div
+              class="shipping-bar"
+              id="shipping-bar"
+              aria-label="Shipping progress"
+            >
+              <div class="shipping-bar__text" id="shipping-bar-text"></div>
+              <div class="shipping-bar__track" aria-hidden="true">
+                <div class="shipping-bar__fill" id="shipping-bar-fill"></div>
+              </div>
+            </div>
+
+            <!-- Column labels (hidden on mobile) -->
+            <div class="cart-table-header" aria-hidden="true">
+              <span>Product</span>
+              <span>Price</span>
+              <span>Quantity</span>
+              <span>Total</span>
+              <span></span>
+            </div>
+
+            <!-- Cart rows rendered by cart.js -->
+            <div
+              class="cart-items-list"
+              id="cart-items-list"
+              role="list"
+              aria-label="Cart items"
+            ></div>
+
+            <!-- Footer actions -->
+            <div class="cart-actions">
+              <a href="products.html" class="btn btn-outline"
+                >&#8592; Continue Shopping</a
+              >
+              <button
+                class="btn btn-ghost cart-clear-btn"
+                id="cart-clear-btn"
+                aria-label="Remove all items"
+              >
+                Clear Cart
+              </button>
+            </div>
+          </section>
+          <!-- /cart items -->
+
+          <!-- ════════════════════════════
+             RIGHT: ORDER SUMMARY
+        ════════════════════════════ -->
+          <aside
+            class="cart-summary"
+            aria-label="Order summary"
+            id="cart-summary"
+          >
+            <h3>Order Summary</h3>
+
+            <!-- Item count -->
+            <div class="summary-row">
+              <span>Items</span>
+              <span id="summary-item-count">0</span>
+            </div>
+
+            <!-- Subtotal -->
+            <div class="summary-row">
+              <span>Subtotal</span>
+              <span id="summary-subtotal">$0.00</span>
+            </div>
+
+            <!-- Discount row (hidden until promo applied) -->
+            <div
+              class="summary-row summary-row--discount hidden"
+              id="summary-discount-row"
+            >
+              <span id="summary-discount-label">Discount</span>
+              <span id="summary-discount-val" style="color: #c0392b"></span>
+            </div>
+
+            <!-- Shipping -->
+            <div class="summary-row">
+              <span>Shipping</span>
+              <span id="summary-shipping">&#8212;</span>
+            </div>
+
+            <!-- Total -->
+            <div class="summary-row total">
+              <span>Total</span>
+              <span id="summary-total">$0.00</span>
+            </div>
+
+            <!-- Promo code -->
+            <div class="promo-form">
+              <label for="promo-input">Promo Code</label>
+              <div class="promo-input-wrap">
+                <input
+                  type="text"
+                  id="promo-input"
+                  class="promo-input"
+                  placeholder="e.g. KLUGH10"
+                  aria-label="Enter promo code"
+                  autocomplete="off"
+                  spellcheck="false"
+                />
+                <button class="promo-apply" id="promo-apply">Apply</button>
+              </div>
+              <p class="promo-hint hidden" id="promo-hint"></p>
+            </div>
+
+            <!-- Checkout button -->
+            <button class="btn btn-primary checkout-btn" id="checkout-btn">
+              Proceed to Checkout
+            </button>
+            <p class="summary-note">
+              Taxes calculated at checkout.&nbsp;
+              <strong>Free shipping</strong> on orders over $150.
+            </p>
+
+            <!-- Trust badges -->
+            <ul class="trust-badges" aria-label="Shopping guarantees">
+              <li>
+                <span class="trust-icon" aria-hidden="true">&#128274;</span>
+                <span>Secure checkout</span>
+              </li>
+              <li>
+                <span class="trust-icon" aria-hidden="true">&#10227;</span>
+                <span>Free returns</span>
+              </li>
+              <li>
+                <span class="trust-icon" aria-hidden="true">&#127758;</span>
+                <span>Worldwide shipping</span>
+              </li>
+            </ul>
+          </aside>
+          <!-- /.cart-summary -->
+        </div>
+        <!-- /.cart-layout -->
+      </div>
+      <!-- /.container -->
+
+      <!-- ═══════════════════════════════════
+         CHECKOUT CONFIRMATION OVERLAY
+         Shown when user clicks "Proceed to Checkout"
+    ═══════════════════════════════════ -->
+      <div
+        class="checkout-modal"
+        id="checkout-modal"
+        role="dialog"
+        aria-modal="true"
+        aria-label="Order confirmed"
+        hidden
+      >
+        <div class="checkout-modal__box">
+          <div class="checkout-modal__icon" aria-hidden="true">&#10003;</div>
+          <h2 class="checkout-modal__title">Order Placed!</h2>
+          <p class="checkout-modal__msg">
+            Thank you for shopping with Mercy. A confirmation email is on
+            its way to you.
+          </p>
+          <p class="checkout-modal__order" id="checkout-order-num"></p>
+          <div class="checkout-modal__actions">
+            <a href="products.html" class="btn btn-primary"
+              >Continue Shopping</a
+            >
+            <button class="btn btn-outline" id="checkout-close">
+              Back to Cart
+            </button>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="footer" role="contentinfo">
+      <div class="footer__grid">
+        <div class="footer__brand">
+          <a href="index.html" class="footer__logo">Mercy</a>
+          <p class="footer__tagline">
+            Modern essentials for the considered wardrobe. Designed for
+            longevity, worn with intention.
+          </p>
+          <div class="footer__socials">
+            <a href="#" class="footer__social-link" aria-label="Instagram">
+              <svg viewBox="0 0 24 24" aria-hidden="true" fill="currentColor">
+                <path
+                  d="M12 2.163c3.204 0 3.584.012 4.85.07 1.366.062 2.633.334 3.608 1.308.975.975 1.246 2.242 1.308 3.608.058 1.266.07 1.646.07 4.85s-.012 3.584-.07 4.85c-.062 1.366-.334 2.633-1.308 3.608-.975.975-2.242 1.246-3.608 1.308-1.266.058-1.646.07-4.85.07s-3.584-.012-4.85-.07c-1.366-.062-2.633-.334-3.608-1.308C2.497 19.467 2.226 18.2 2.164 16.834 2.106 15.568 2.094 15.188 2.094 12s.012-3.584.07-4.85c.062-1.366.334-2.633 1.308-3.608C4.447 2.567 5.714 2.296 7.08 2.234 8.346 2.176 8.726 2.163 12 2.163zm0-2.163C8.741 0 8.332.014 7.052.072 5.197.157 3.355.673 2.014 2.014.673 3.355.157 5.197.072 7.052.014 8.332 0 8.741 0 12c0 3.259.014 3.668.072 4.948.085 1.855.601 3.697 1.942 5.038 1.341 1.341 3.183 1.857 5.038 1.942C8.332 23.986 8.741 24 12 24s3.668-.014 4.948-.072c1.855-.085 3.697-.601 5.038-1.942 1.341-1.341 1.857-3.183 1.942-5.038C23.986 15.668 24 15.259 24 12s-.014-3.668-.072-4.948c-.085-1.855-.601-3.697-1.942-5.038C20.645.673 18.803.157 16.948.072 15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zm0 10.162a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"
+                />
+              </svg>
+            </a>
+            <a href="#" class="footer__social-link" aria-label="Facebook">
+              <svg viewBox="0 0 24 24" aria-hidden="true" fill="currentColor">
+                <path
+                  d="M24 12.073C24 5.405 18.627 0 12 0S0 5.405 0 12.073C0 18.1 4.388 23.094 10.125 24v-8.437H7.078v-3.49h3.047V9.41c0-3.025 1.792-4.697 4.533-4.697 1.312 0 2.686.236 2.686.236v2.97h-1.513c-1.491 0-1.956.93-1.956 1.874v2.25h3.328l-.532 3.49h-2.796V24C19.612 23.094 24 18.1 24 12.073z"
+                />
+              </svg>
+            </a>
+            <a href="#" class="footer__social-link" aria-label="TikTok">
+              <svg viewBox="0 0 24 24" aria-hidden="true" fill="currentColor">
+                <path
+                  d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"
+                />
+              </svg>
+            </a>
+            <a href="#" class="footer__social-link" aria-label="Pinterest">
+              <svg viewBox="0 0 24 24" aria-hidden="true" fill="currentColor">
+                <path
+                  d="M12 0C5.373 0 0 5.373 0 12c0 5.084 3.163 9.426 7.627 11.174-.105-.949-.2-2.405.042-3.441.218-.937 1.407-5.965 1.407-5.965s-.359-.719-.359-1.782c0-1.668.967-2.914 2.171-2.914 1.023 0 1.518.769 1.518 1.69 0 1.029-.655 2.568-.994 3.995-.283 1.194.599 2.169 1.777 2.169 2.133 0 3.772-2.249 3.772-5.495 0-2.873-2.064-4.882-5.012-4.882-3.414 0-5.418 2.561-5.418 5.207 0 1.031.397 2.138.893 2.738a.36.36 0 0 1 .083.345l-.333 1.36c-.053.22-.174.267-.402.161-1.499-.698-2.436-2.889-2.436-4.649 0-3.785 2.75-7.262 7.929-7.262 4.163 0 7.398 2.967 7.398 6.931 0 4.136-2.607 7.464-6.227 7.464-1.216 0-2.359-.632-2.75-1.378l-.748 2.853c-.271 1.043-1.002 2.35-1.492 3.146C9.57 23.812 10.763 24 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0z"
+                />
+              </svg>
+            </a>
+            <a href="#" class="footer__social-link" aria-label="Twitter / X">
+              <svg viewBox="0 0 24 24" aria-hidden="true" fill="currentColor">
+                <path
+                  d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.744l7.736-8.852L1.254 2.25H8.08l4.259 5.629L18.244 2.25zm-1.161 17.52h1.833L7.084 4.126H5.117L17.083 19.77z"
+                />
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <div class="footer__col">
+          <h4>Shop</h4>
+          <ul>
+            <li><a href="products.html">All Products</a></li>
+            <li><a href="products.html?cat=tops">Tops</a></li>
+            <li><a href="products.html?cat=bottoms">Bottoms</a></li>
+            <li><a href="products.html?cat=outerwear">Outerwear</a></li>
+            <li><a href="products.html?cat=accessories">Accessories</a></li>
+          </ul>
+        </div>
+
+        <div class="footer__col">
+          <h4>Company</h4>
+          <ul>
+            <li><a href="about.html">Our Story</a></li>
+            <li><a href="about.html#values">Values</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="#">Press</a></li>
+          </ul>
+        </div>
+
+        <div class="footer__col">
+          <h4>Support</h4>
+          <ul>
+            <li><a href="#">Shipping Info</a></li>
+            <li><a href="#">Returns</a></li>
+            <li><a href="#">Size Guide</a></li>
+            <li><a href="#">FAQ</a></li>
+          </ul>
+        </div>
+      </div>
+      <!-- /.footer__grid -->
+
+      <div class="footer__bottom">
+        <p>&copy; 2026 Mercy Adebiyi. All rights reserved.</p>
+        <div class="footer__bottom-links">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Service</a>
+          <a href="#">Cookies</a>
+        </div>
+      </div>
+    </footer>
+
+    <!-- ===== SCRIPTS ===== -->
+    <script src="scripts/app.js" defer></script>
+    <script src="scripts/cart.js" defer></script>
+  </body>
+</html>

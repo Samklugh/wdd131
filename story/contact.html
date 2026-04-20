@@ -1,0 +1,224 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Little Faith Stories — Contact</title>
+    <meta
+      name="description"
+      content="Get in touch with the Little Faith Stories team. We'd love to hear from you!"
+    />
+
+    <!-- Google Fonts: Playfair Display (headings) + Nunito (body) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Main stylesheet -->
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <!-- =====================================================
+       NAVBAR — fixed top navigation
+       ===================================================== -->
+    <nav class="navbar" aria-label="Main navigation">
+      <div class="container">
+        <a href="index.html" class="nav-logo">📖 Little Faith <span>Stories</span></a>
+
+        <button
+          class="nav-toggle"
+          aria-expanded="false"
+          aria-controls="nav-links"
+          aria-label="Toggle navigation menu"
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+
+        <ul class="nav-links" id="nav-links" role="list">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="stories.html">Stories</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <!-- =====================================================
+       MAIN CONTENT
+       ===================================================== -->
+    <main>
+      <!-- ── Page Header Banner ── -->
+      <header class="page-header" aria-labelledby="contact-page-heading">
+        <div class="container">
+          <h1 id="contact-page-heading">Get in Touch</h1>
+          <p>We'd love to hear from you</p>
+        </div>
+      </header>
+
+      <!-- ── Contact Section ── -->
+      <section
+        class="section contact-section"
+        aria-labelledby="contact-form-heading"
+      >
+        <div class="container">
+          <div class="contact-grid">
+            <!-- Contact Form -->
+            <div class="contact-form-wrap reveal">
+              <h2 id="contact-form-heading">Send Us a Message</h2>
+
+              <!--
+              The form uses HTML5 required attributes for basic validation.
+              JS handles the submit event, shows a success message, and resets.
+              No backend — this is a front-end only demo form.
+            -->
+              <form id="contact-form" novalidate>
+                <!-- Name field -->
+                <div class="form-group">
+                  <label for="contact-name">Your Name</label>
+                  <input
+                    type="text"
+                    id="contact-name"
+                    name="name"
+                    placeholder="e.g. Mary Smith"
+                    required
+                    autocomplete="name"
+                  />
+                </div>
+
+                <!-- Email field -->
+                <div class="form-group">
+                  <label for="contact-email">Email Address</label>
+                  <input
+                    type="email"
+                    id="contact-email"
+                    name="email"
+                    placeholder="you@example.com"
+                    required
+                    autocomplete="email"
+                  />
+                </div>
+
+                <!-- Message field -->
+                <div class="form-group">
+                  <label for="contact-message">Your Message</label>
+                  <textarea
+                    id="contact-message"
+                    name="message"
+                    placeholder="Write your message here..."
+                    required
+                  ></textarea>
+                </div>
+
+                <button type="submit" class="btn btn-primary">
+                  Send Message ✉️
+                </button>
+
+                <!-- Success message — hidden by default, shown by JS after submit -->
+                <p
+                  class="form-success"
+                  id="form-success"
+                  role="alert"
+                  aria-live="polite"
+                >
+                  Thanks! We'll be in touch soon 🌟
+                </p>
+              </form>
+            </div>
+            <!-- /.contact-form-wrap -->
+
+            <!-- Contact Information -->
+            <aside
+              class="contact-info reveal"
+              aria-labelledby="contact-info-heading"
+            >
+              <h2 id="contact-info-heading">Contact Information</h2>
+
+              <!-- Email -->
+              <div class="contact-info-item">
+                <span class="info-icon" aria-hidden="true">📧</span>
+                <div>
+                  <h4>Email Us</h4>
+                  <p>hello@biblestoriesforchildren.com</p>
+                </div>
+              </div>
+
+              <!-- Location -->
+              <div class="contact-info-item">
+                <span class="info-icon" aria-hidden="true">📍</span>
+                <div>
+                  <h4>Our Location</h4>
+                  <p>Salt Lake City, Utah, USA</p>
+                </div>
+              </div>
+
+              <!-- Social / community note -->
+              <div class="contact-info-item">
+                <span class="info-icon" aria-hidden="true">💬</span>
+                <div>
+                  <h4>Community</h4>
+                  <p>
+                    We read every message. Whether you have a question, a story
+                    suggestion, or just want to say hello — we'd love to hear
+                    from you!
+                  </p>
+                </div>
+              </div>
+            </aside>
+            <!-- /.contact-info -->
+          </div>
+          <!-- /.contact-grid -->
+        </div>
+      </section>
+    </main>
+
+    <!-- =====================================================
+       FOOTER
+       ===================================================== -->
+    <footer>
+      <div class="container">
+        <div class="footer-grid">
+          <div class="footer-brand">
+            <p class="footer-logo">📖 Little Faith Stories</p>
+            <p>
+              Bringing the wonder of Scripture to children through beautifully
+              told, faith-filled stories.
+            </p>
+          </div>
+
+          <div class="footer-links">
+            <h4>Quick Links</h4>
+            <ul>
+              <li><a href="index.html">Home</a></li>
+              <li><a href="stories.html">Stories</a></li>
+              <li><a href="about.html">About</a></li>
+              <li><a href="contact.html">Contact</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-verse">
+            <h4>Verse of the Day</h4>
+            <blockquote>
+              "For God so loved the world that he gave his one and only Son."
+              <cite>— John 3:16</cite>
+            </blockquote>
+          </div>
+        </div>
+
+        <p class="footer-bottom">
+          &copy; <span id="year"></span> Little Faith Stories. Made with
+          ❤️ and faith.
+        </p>
+      </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script>
+      document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
+  </body>
+</html>

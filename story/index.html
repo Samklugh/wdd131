@@ -1,0 +1,336 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Little Faith Stories</title>
+    <meta
+      name="description"
+      content="Explore timeless Bible stories for children — full of adventure, faith, and wonder."
+    />
+
+    <!-- Google Fonts: Playfair Display (headings) + Nunito (body) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Main stylesheet -->
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <!-- =====================================================
+       NAVBAR — fixed top navigation, shared across all pages
+       ===================================================== -->
+    <nav class="navbar" aria-label="Main navigation">
+      <div class="container">
+        <a href="index.html" class="nav-logo">📖 Little Faith <span>Stories</span></a>
+
+        <!-- Hamburger button (visible on mobile only) -->
+        <button
+          class="nav-toggle"
+          aria-expanded="false"
+          aria-controls="nav-links"
+          aria-label="Toggle navigation menu"
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+
+        <!-- Navigation links -->
+        <ul class="nav-links" id="nav-links" role="list">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="stories.html">Stories</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <!-- =====================================================
+       MAIN CONTENT — home page specific sections
+       ===================================================== -->
+    <main class="home-hero">
+
+      <!-- ── SECTION 1: Hero ── -->
+      <section class="hero" aria-labelledby="hero-heading">
+        <div class="container hero-inner">
+          <!-- Badge label -->
+          <span class="hero-badge reveal">✨ Faith · Wonder · Adventure</span>
+
+          <h1 id="hero-heading" class="reveal">
+            Bible Stories<br />for Little Hearts
+          </h1>
+
+          <!-- Dual audience intro -->
+          <p class="hero-intro reveal">
+            A beautiful collection of timeless stories from Scripture —
+            retold in warm, simple language that children love and parents
+            can feel good about sharing.
+          </p>
+
+          <div class="hero-actions reveal">
+            <a href="stories.html" class="btn btn-primary">Read Stories</a>
+            <a href="about.html" class="btn btn-outline">Learn More</a>
+          </div>
+
+          <!-- Social proof strip -->
+          <div class="hero-stats reveal">
+            <div class="hero-stat">
+              <strong>6+</strong>
+              <span>Stories</span>
+            </div>
+            <div class="hero-stat-divider" aria-hidden="true"></div>
+            <div class="hero-stat">
+              <strong>All ages</strong>
+              <span>3 and up</span>
+            </div>
+            <div class="hero-stat-divider" aria-hidden="true"></div>
+            <div class="hero-stat">
+              <strong>Free</strong>
+              <span>Always</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ── SECTION 2: Parent / Kid intro blurb ── -->
+      <section class="intro-section section" aria-labelledby="intro-heading">
+        <div class="container intro-grid">
+          <!-- Parents card -->
+          <div class="intro-card reveal">
+            <span class="intro-icon" aria-hidden="true">👨‍👩‍👧</span>
+            <h3 id="intro-heading">For Parents</h3>
+            <p>
+              Find stories that open conversations about faith, courage,
+              and kindness — perfect for bedtime reading or family devotions.
+              Each tale is carefully worded to suit young listeners.
+            </p>
+          </div>
+          <!-- Kids card -->
+          <div class="intro-card intro-card--yellow reveal">
+            <span class="intro-icon" aria-hidden="true">🌟</span>
+            <h3>For Little Readers</h3>
+            <p>
+              Brave heroes, incredible miracles, and lessons that stay with
+              you forever. Dive into the greatest adventure book ever written
+              — the Bible!
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ── SECTION 3: Featured Stories ── -->
+      <section
+        class="section featured-stories"
+        aria-labelledby="featured-heading"
+      >
+        <div class="container">
+          <h2 id="featured-heading" class="section-title reveal">
+            Featured Stories
+          </h2>
+          <p class="section-subtitle reveal">
+            A few favourites to get you started — choose a story and begin
+          </p>
+
+          <!-- 4-card responsive grid -->
+          <div class="cards-grid">
+
+            <!-- Card: Noah's Ark -->
+            <article class="story-card reveal">
+              <div class="card-img" aria-hidden="true">
+                <img
+                  src="https://images.unsplash.com/photo-1501854140801-50d01698950b?auto=format&fit=crop&w=600&h=280&q=80"
+                  alt="Peaceful water and green hills — Noah's Ark"
+                  loading="lazy"
+                />
+              </div>
+              <div class="card-body">
+                <span class="card-tag">Old Testament</span>
+                <h3>Noah's Ark</h3>
+                <p>
+                  God chose Noah to build a mighty ark and save every creature
+                <a href="noah.html" class="btn btn-outline">Read Story →</a>
+              </div>
+            </article>
+
+            <!-- Card: David and Goliath -->
+            <article class="story-card reveal">
+              <div class="card-img" aria-hidden="true">
+                <img
+                  src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=600&h=280&q=80"
+                  alt="Rocky mountain landscape — David and Goliath"
+                  loading="lazy"
+                />
+              </div>
+              <div class="card-body">
+                <span class="card-tag">Old Testament</span>
+                <h3>David and Goliath</h3>
+                <p>
+                  A young shepherd with bold faith stood up to a fearsome giant
+                  — and taught us that with God, no challenge is too big.
+                </p>
+                <a href="stories.html" class="btn btn-outline">Read Story →</a>
+              </div>
+            </article>
+
+            <!-- Card: The Good Samaritan -->
+            <article class="story-card reveal">
+              <div class="card-img" aria-hidden="true">
+                <img
+                  src="https://images.unsplash.com/photo-1469571486292-0ba58a3f068b?auto=format&fit=crop&w=600&h=280&q=80"
+                  alt="People helping one another — The Good Samaritan"
+                  loading="lazy"
+                />
+              </div>
+              <div class="card-body">
+                <span class="card-tag">New Testament</span>
+                <h3>The Good Samaritan</h3>
+                <p>
+                  A traveller stops to help a stranger in need — showing us
+                  that true kindness reaches across every boundary.
+                </p>
+                <a href="stories.html" class="btn btn-outline">Read Story →</a>
+              </div>
+            </article>
+
+            <!-- Card: Jonah and the Whale -->
+            <article class="story-card reveal">
+              <div class="card-img" aria-hidden="true">
+                <img
+                  src="https://images.unsplash.com/photo-1505118380757-91f5f5632de0?auto=format&fit=crop&w=600&h=280&q=80"
+                  alt="Rolling ocean waves — Jonah and the Whale"
+                  loading="lazy"
+                />
+              </div>
+              <div class="card-body">
+                <span class="card-tag">Old Testament</span>
+                <h3>Jonah and the Whale</h3>
+                <p>
+                  Jonah tried to run from God — but learned that no matter
+                  where we go, God's love and second chances always find us.
+                </p>
+                <a href="stories.html" class="btn btn-outline">Read Story →</a>
+              </div>
+            </article>
+
+          </div><!-- /.cards-grid -->
+
+          <!-- Bottom CTA -->
+          <div class="section-cta reveal">
+            <a href="stories.html" class="btn btn-primary btn-lg">
+              Read Stories &nbsp;→
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- ── SECTION 4: Why These Stories? ── -->
+      <section class="section why-section" aria-labelledby="why-heading">
+        <div class="container">
+          <h2 id="why-heading" class="section-title reveal">
+            Why These Stories?
+          </h2>
+          <p class="section-subtitle reveal">
+            Written for little hearts and curious minds
+          </p>
+
+          <div class="features-grid">
+            <!-- Feature 1 -->
+            <div class="feature-item reveal">
+              <span class="feature-icon" aria-hidden="true">📖</span>
+              <h3>Timeless Lessons</h3>
+              <p>
+                Each story carries a message of courage, kindness, and trust
+                that children carry for life.
+              </p>
+            </div>
+            <!-- Feature 2 -->
+            <div class="feature-item reveal">
+              <span class="feature-icon" aria-hidden="true">🌟</span>
+              <h3>Easy to Understand</h3>
+              <p>
+                Stories are retold in warm, simple language that young readers
+                can follow and enjoy.
+              </p>
+            </div>
+            <!-- Feature 3 -->
+            <div class="feature-item reveal">
+              <span class="feature-icon" aria-hidden="true">🎉</span>
+              <h3>Fun for All Ages</h3>
+              <p>
+                Whether reading alone or with a parent, every story sparks
+                imagination and good discussion.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ── SECTION 5: Scripture Banner ── -->
+      <section class="scripture-banner" aria-label="Scripture quote">
+        <div class="container">
+          <blockquote>
+            "Your word is a lamp for my feet, a light on my path."
+            <cite>— Psalm 119:105</cite>
+          </blockquote>
+        </div>
+      </section>
+
+    </main>
+
+    <!-- =====================================================
+       FOOTER — shared across all pages
+       ===================================================== -->
+    <footer>
+      <div class="container">
+        <div class="footer-grid">
+          <!-- Column 1: Brand -->
+          <div class="footer-brand">
+            <p class="footer-logo">📖 Little Faith Stories</p>
+            <p>
+              Bringing the wonder of Scripture to children through beautifully
+              told, faith-filled stories.
+            </p>
+          </div>
+
+          <!-- Column 2: Quick Links -->
+          <div class="footer-links">
+            <h4>Quick Links</h4>
+            <ul>
+              <li><a href="index.html">Home</a></li>
+              <li><a href="stories.html">Stories</a></li>
+              <li><a href="about.html">About</a></li>
+              <li><a href="contact.html">Contact</a></li>
+            </ul>
+          </div>
+
+          <!-- Column 3: Verse of the day -->
+          <div class="footer-verse">
+            <h4>Verse of the Day</h4>
+            <blockquote>
+              "For God so loved the world that he gave his one and only Son."
+              <cite>— John 3:16</cite>
+            </blockquote>
+          </div>
+        </div>
+        <!-- /.footer-grid -->
+
+        <p class="footer-bottom">
+          &copy; <span id="year"></span> Little Faith Stories. Made with
+          ❤️ and faith.
+        </p>
+      </div>
+    </footer>
+
+    <!-- Main JavaScript file -->
+    <script src="js/main.js"></script>
+    <!-- Inline: set the current year in the footer copyright -->
+    <script>
+      document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
+  </body>
+</html>
